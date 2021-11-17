@@ -4,7 +4,7 @@
     justify-content: center;
     align-content: center;
     padding-top: 120px;
-    padding-left: 400px;
+    padding-left: 390px;
     height: max-content;
     width: 500px;
 }
@@ -13,10 +13,12 @@
     display: flex;
     justify-self:center;
     align-self:center;
-    align-content: space-around;
+    flex-wrap: wrap;
+    /* align-content: space-around; */
+    /* align-content: center; */
     margin-top: 20px;
     margin-bottom: 20px;
-
+    width: 600px;
 }
 
 #order{

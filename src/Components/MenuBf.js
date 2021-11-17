@@ -1,23 +1,41 @@
-import React, {useState} from 'react';
+import React from 'react';
+// import React, {useState} from 'react';
 import Data from '../Data/menu.json'
-import './Styles/MenuBf.css';
-import AddItem from './AddItem';
-import TotalItems from './TotalItems';
+import './Styles/Cards.css';
+// import AddItem from './AddItem';
+// import TotalItems from './TotalItems';
 
 function MenuBf() {
 const breakfast = Data.items.filter(item => item.category === "breakfast")
-const [cost, setCost] = useState(0)
-const [keyItem, setKeyItem] = useState(0)
+// const [cost, setCost] = useState(0)
+// const [keyItem, setKeyItem] = useState(0)
 
-const catchvalue = (e, k) => {
-    console.log(e)
-    setCost(e)
-    setKeyItem(k)
+// const catchvalue = (e, k) => {
+//     console.log(e)
+//     setCost(e)
+//     setKeyItem(k)
 
+// }
+
+return (
+    <section className="op-container-bf">
+        {breakfast.map(({name, price, id, }) => {
+        return (
+            <button className= "add-bf" key={name} id = {id} price = {price}> 
+                {name} <br/> ${price}
+            </button>
+
+        )
+        })}                   
+
+    </section>
+      
+)
 }
 
-    return (
-            <table className="menu-bf">
+export default MenuBf
+
+/* <table className="menu-bf">
                 <thead>
                     <tr>
                         <th>Platillo</th>
@@ -49,8 +67,4 @@ const catchvalue = (e, k) => {
                         );
                     })}
                 </tbody>
-            </table>
-    )
-}
-
-export default MenuBf
+            </table> */
