@@ -6,7 +6,7 @@ import './Styles/Cards.css';
 // import TotalItems from './TotalItems';
 
 function MenuBf() {
-const breakfast = Data.items.filter(item => item.category === "breakfast")
+const breakfast = Data.items.filter(item => item.category === "Desayuno")
 // const [cost, setCost] = useState(0)
 // const [keyItem, setKeyItem] = useState(0)
 

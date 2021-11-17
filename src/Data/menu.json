@@ -4,73 +4,73 @@
             "id": 0,
             "name": "Café americano",
             "price": 5,
-            "category": "breakfast"
+            "category": "Desayuno"
         },
         {
             "id": 1,
             "name": "Café con leche",
             "price": 7,
-            "category": "breakfast"
+            "category": "Desayuno"
         },
         {
             "id": 2,
             "name": "Sandwich de jamón y queso",
             "price": 10,
-            "category" : "breakfast"
+            "category" : "Desayuno"
         },
         {
             "id": 3,
             "name": "Jugo de frutas natural",
             "price": 7,
-            "category": "breakfast"
+            "category": "Desayuno"
         },
         {
             "id": 4,
             "name": "Hamburguesa simple",
             "price": 10,
-            "category": "meal"
+            "category": "Comida"
         },
         {
             "id": 5,
             "name": "Hamburguesa doble",
             "price": 15,
-            "category": "meal"
+            "category": "Comida"
         },
         {
             "id": 6,
             "name": "Papas fritas",
             "price": 5,
-            "category": "meal"
+            "category": "Comida"
         },
         {
             "id": 7,
             "name": "Aros de cebolla",
             "price": 5,
-            "category": "meal"
+            "category": "Comida"
         },
         {
             "id": 8,
             "name": "Agua 500ml",
             "price": 5,
-            "category": "meal"
+            "category": "Comida"
         },
         {
             "id": 9,
             "name": "Agua 750ml",
             "price": 7,
-            "category": "meal"
+            "category": "Comida"
         },
         {
             "id": 10,
             "name": "Bebida/gaseosa 500ml",
             "price": 7,
-            "category": "meal"
+            "category": "Comida"
         },
         {
             "id": 11,
             "name": "Bebida/gaseosa 750ml",
             "price": 10,
-            "category": "meal"
+            "category": "Comida"
         },
         {
             "id": 12,

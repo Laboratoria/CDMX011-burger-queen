@@ -5,7 +5,7 @@ import './Styles/Cards.css';
 
 
 function MenuMeals() {
-const meals = Data.items.filter(item => item.category === "meal" || item.category === "extra")
+const meals = Data.items.filter(item => item.category === "Comida" || item.category === "extra")
 
     return (
         <section className="op-container">
