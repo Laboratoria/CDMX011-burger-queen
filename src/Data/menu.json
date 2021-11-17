@@ -74,7 +74,13 @@
         },
         {
             "id": 12,
-            "name": "Queso/huevo",
+            "name": "Queso extra",
+            "price": 1,
+            "category": "extra"
+        },
+        {
+            "id": 13,
+            "name": "Huevo extra",
             "price": 1,
             "category": "extra"
         }
