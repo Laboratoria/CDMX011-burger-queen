@@ -1,49 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Data from '../Data/menu.json'
 import './Styles/Cards.css';
-//import AddItem from './AddItem';
+import Comanda from './Comanda';
 
 
 function MenuMeals() {
+
 const meals = Data.items.filter(item => item.category === "Comida" || item.category === "extra")
+
+const handleInputChange = (e) => { console.log(e) }
+//Declaración del estado inicial, el valor y lo que hará que el valor cambie
+const [order, setOrder]= useState([])
+
+// const selectElem = (e) => {
+//     setTypeOfElem(e.target.value)
+//     handleInputChange(e)
+//     //console.log(typeOfElem)
+//   }
 
     return (
         <section className="op-container">
-            {meals.map(({name, price, id, }) => {
-            return (
-                <button className= "add-meals" key={name} id = {id} price = {price}> 
-                    {name} <br/> ${price}
+            {meals.map(product =>  (
+                <button className= "add-meals" key={product.id} value={product.name} onClick={()=>{setOrder([...order, {name:product.name, price:product.price}]);
+            console.log(order)}}> 
+                    {product.name} <br/> ${product.price}
                 </button>
-
-            )
-            })}                   
-
+            ))}   
+        <Comanda order={order}/>
         </section>
           
     )
+
 }
 
 export default MenuMeals
-
-// <table className="menu-bf">
-            //     <thead>
-            //         <tr>
-            //             <th>Platillo</th>
-            //             <th>Precio</th>
-            //             <th>Cantidad</th>
-            //             <th>Total</th>
-            //         </tr>
-            //     </thead>
-            //     <tbody>
-            //         {meals.map((item, i) => {
-            //             return (
-            //                     <tr key={i}>
-            //                     <td>{item.name}</td>
-            //                     <td>${item.price}</td>
-            //                     <td><AddItem /></td>
-            //                     <td>$0</td>
-            //                 </tr>
-            //             );
-            //         })}
-            //     </tbody>
-            // </table>

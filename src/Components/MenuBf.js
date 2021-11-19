@@ -1,33 +1,36 @@
-import React from 'react';
-// import React, {useState} from 'react';
+import React, {useState} from 'react';
 import Data from '../Data/menu.json'
 import './Styles/Cards.css';
-// import AddItem from './AddItem';
-// import TotalItems from './TotalItems';
+import Comanda from './Comanda';
+
 
 function MenuBf() {
+
 const breakfast = Data.items.filter(item => item.category === "Desayuno")
+
+const handleInputChange = (e) => { console.log(e) }
+//Declaración del estado inicial, el valor y lo que hará que el valor cambie
+const [order, setOrder]= useState([])
+
 // const [cost, setCost] = useState(0)
 // const [keyItem, setKeyItem] = useState(0)
-
 // const catchvalue = (e, k) => {
 //     console.log(e)
 //     setCost(e)
 //     setKeyItem(k)
-
 // }
+// const { handleItem } = props;
 
 return (
     <section className="op-container-bf">
-        {breakfast.map(({name, price, id, }) => {
+        {breakfast.map(product => {
         return (
-            <button className= "add-bf" key={name} id = {id} price = {price}> 
-                {name} <br/> ${price}
+            <button className= "add-bf" key={product.id} value={product.name} onClick={()=>{setOrder([...order, {name:product.name, price:product.price}]);
+            console.log(order)}}> 
+                {product.name} <br/> ${product.price}
             </button>
-
-        )
-        })}                   
-
+        )})}                   
+    <Comanda order={order}/>
     </section>
       
 )
@@ -35,36 +38,3 @@ return (
 
 export default MenuBf
 
-/* <table className="menu-bf">
-                <thead>
-                    <tr>
-                        <th>Platillo</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {breakfast.map((item, i) => {
-                        return (
-                            <tr key={i}>
-                                <td>{item.name}</td>
-                                <td>${item.price}</td>
-                                <td>
-                                    <AddItem 
-                                    //propiedad = {funcion, string, booleano, etc}
-                                       sendvalue={catchvalue}
-                                       keyI={i}
-                                    />
-                                </td>
-                                <td>
-                                       <TotalItems
-                                           price={item.price}
-                                           cost={cost}
-                                       />
-                                </td>
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table> */

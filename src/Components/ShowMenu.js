@@ -3,6 +3,7 @@ import MenuBf from './MenuBf';
 import MenuMeals from './MenuMeal';
 import './Styles/ShowMenu.css';
 
+
 function ShowMenu(props) {
   //Se declara lo que quiero que cambie
   const [typeOfFood, setTypeOfFood] = useState('Desayuno');
@@ -19,7 +20,7 @@ function ShowMenu(props) {
       client: '',
       table: '',
       category: '',
-      order: [],
+      order: [ ],
       total: 0    
     };
     const [values, setValues] = useState(initialStateValues);
@@ -36,11 +37,15 @@ function ShowMenu(props) {
       setTypeOfFood(e.target.value)
       handleInputChange(e)
     }
+
+    const handleItem = (e) =>{
+      console.log('entró', e)
+    }
     
     return (
       <div id="menu-container">
         <div id="btn-options">
-          <input type="button" className="btn-op menu-bf" name="category" value="Desayuno" onClick={selectCategory}/>
+          <input type="button" className="btn-op menu-bf" name="category" value="Desayuno" onClick={selectCategory}/> 
           <input type="button" className="btn-op menu-m" name="category" value="Comida" onClick={selectCategory}/>
         </div>
         {/* <form onSubmit={handleSubmit}> */}
@@ -59,26 +64,19 @@ function ShowMenu(props) {
         </div>
         <div id="menu">
           {
-            typeOfFood === 'Desayuno'? <MenuBf/>:<MenuMeals/>
+            typeOfFood === 'Desayuno'? <MenuBf handleItem = {handleItem}
+            
+            />:<MenuMeals/>
           }
-        </div>
-        <section id="resumen">
-          <div id="resumen-header">
-            <label className="resume-values">Cliente: {values.client}</label>
-            <label className="resume-values">Mesa: {values.table}</label>
-            <label className="resume-values">{values.category}</label>
           </div>
-          <hr/>
-          <div id="items">
+          
             {/* Aquí se insertarían los platillos, no sé si sea mejor hacer un componente de esto Dx */}
-          </div>
-        </section>
-        <div id="btn-send">
-          <button className="btn-op cancel" >Cancelar</button>
-          <button className="btn-op confirm" type="submit" onClick={handleSubmit} >Confirmar</button>
-        </div>
-        {/* </form> */}
-      </div>  
+            <div id="btn-send">
+            <button className="btn-op cancel" >Cancelar</button>
+            <button className="btn-op confirm" type="submit" onClick={handleSubmit} >Confirmar</button>
+            </div>
+            {/* </form> */}
+            </div>  
     )  
 }
 

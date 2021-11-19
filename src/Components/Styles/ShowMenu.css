@@ -55,6 +55,7 @@ label{
     width: 600px;
     height: max-content;
     align-self: center;
+    margin-top: 90px;
     margin-bottom: 25px;
 }
 
@@ -65,6 +66,11 @@ label{
     margin-top: 10px;
 }
 
+#items{
+    padding-left: 25px;
+    font-size: 20px;
+}
+
 hr{
     background-color: black;
 }
@@ -73,6 +79,7 @@ hr{
     display: flex;
     justify-content: space-around;
 }
+
 
 .btn-op {
     width: 170px;
