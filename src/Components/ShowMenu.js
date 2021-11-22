@@ -38,9 +38,9 @@ function ShowMenu(props) {
       handleInputChange(e)
     }
 
-    const handleItem = (e) =>{
-      console.log('entró', e)
-    }
+    // const handleItem = (e) =>{
+    //   console.log('entró', e)
+    // }
     
     return (
       <div id="menu-container">
@@ -49,7 +49,7 @@ function ShowMenu(props) {
           <input type="button" className="btn-op menu-m" name="category" value="Comida" onClick={selectCategory}/>
         </div>
         {/* <form onSubmit={handleSubmit}> */}
-        <div id="order">
+        {/* <div id="order">
           <label>Cliente: </label> 
           <input 
             type="text" 
@@ -60,17 +60,14 @@ function ShowMenu(props) {
           />
           <label>Mesa: </label>           
           <input id="input-table" name="table" value={values.table} onChange={handleInputChange} type="text" placeholder="0" ></input>
-          {/* <p>Conteo: {count}</p>           */}
-        </div>
+          {/* <p>Conteo: {count}</p>           }
+        </div> */}
         <div id="menu">
           {
-            typeOfFood === 'Desayuno'? <MenuBf handleItem = {handleItem}
-            
-            />:<MenuMeals/>
+            typeOfFood === 'Desayuno'? <MenuBf/>:<MenuMeals/>
           }
           </div>
-          
-            {/* Aquí se insertarían los platillos, no sé si sea mejor hacer un componente de esto Dx */}
+        
             <div id="btn-send">
             <button className="btn-op cancel" >Cancelar</button>
             <button className="btn-op confirm" type="submit" onClick={handleSubmit} >Confirmar</button>
