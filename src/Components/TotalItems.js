@@ -6,7 +6,7 @@ function TotalItems({price}){
     const [total, setTotal] = useState(0)
 
     useEffect(() => {
-        console.log(price)
+        //console.log(price)
         const suma = price.length !== 0?price.reduce((a,b) => {return a+b}):0
         // console.log(suma)
         setTotal(suma)

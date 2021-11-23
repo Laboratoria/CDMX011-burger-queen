@@ -1,11 +1,11 @@
-import { createOrder } from '../firebase.js'
+//import { createOrder } from '../firebase.js'
 import React from 'react';
 
 import Header from './Header';
 import Nav from './Nav';
 import ShowMenu from './ShowMenu';
 //import { getFirestore } from '@firebase/firestore';
-
+import {createOrder} from '../firebase'
 
 function Orders(){
 
@@ -30,7 +30,8 @@ function Orders(){
       >
         <Header />
         <Nav />
-        <ShowMenu addOrEdit={addClient}/>
+        {/* <ShowMenu /> */}
+        <ShowMenu addOrder={addClient}/>
       
       </section> 
     );

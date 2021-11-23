@@ -25,7 +25,7 @@
 //         props.sendvalue(count, key)
 //     }
 
-{/* <div id="counter">
+/* <div id="counter">
             <button onClick={restItem} 
                 className="btn-amount"
                 value="-"
@@ -36,4 +36,4 @@
                 className="btn-amount" 
                 value="+"
             >+</button>
-        </div> */}
+        </div> */

@@ -4,7 +4,7 @@ import './Styles/Cards.css';
 import Comanda from './Comanda';
 
 
-function MenuMeals({category}) {
+function MenuMeals({category, addOrder}) {
 
 const meals = Data.items.filter(item => item.category === "Comida" || item.category === "extra")
 
@@ -41,7 +41,7 @@ const handleTable = (e) => {
                     {product.name} <br/> ${product.price}
                 </button>
             ))}   
-        <Comanda order={order} client={client} table={table} category={category}/>
+        <Comanda addOrder={addOrder} order={order} client={client} table={table} category={category}/>
         </section>
         </div>  
     )

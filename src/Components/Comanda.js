@@ -1,17 +1,13 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './Styles/ShowMenu.css';
 import TotalItems from './TotalItems';
+import Submit from './Submit';
 //import DeleteItem from './DeleteItem';
 
-const Comanda = ({order,client, table, category}) => {
+const Comanda = ({order,client, table, category, addOrder}) => {
  // console.log(client)
  //condicionar para que aparezca el 0 si aún no se han escogido elementos
     const totalOrder = order.length !== 0 ? order.map(product => {return product.price}):[]
-    // const deleteElem = (i) => {
-    //   console.log(i)      
-    // }
-    //Banderita
-    //const [deleteItem, setDeleteItem] = useState(false)
     
     return (
         <section>
@@ -26,16 +22,14 @@ const Comanda = ({order,client, table, category}) => {
             <table id="items" key={i}>
               <td>{item.name}</td>
               <td>${item.price}</td>
-              <td><i class="fas fa-trash-alt"></i></td>
+              <td><i className="fas fa-trash-alt"></i></td>
             </table>
             ))
           }
             <p><TotalItems price={totalOrder}/></p>
+            {/* {console.log(TotalItems)} */}
           </div>
-          <div id="btn-send">
-            <button className="btn-op cancel" >Cancelar</button>
-            <button className="btn-op confirm" type="submit"  >Confirmar</button>
-          </div>
+          <Submit addOrder={addOrder} order={order} client={client} table={table} category={category} price={totalOrder} />
         </section>
     )
 }

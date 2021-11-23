@@ -4,10 +4,15 @@ import MenuMeals from './MenuMeal';
 import './Styles/ShowMenu.css';
 
 
-function ShowMenu(props) {
-  //Se declara lo que quiero que cambie
+function ShowMenu({addOrder}) {
+  //Se declara lo que quiero que cambie (categoría)
   const [typeOfFood, setTypeOfFood] = useState('Desayuno');
-
+  
+  const selectCategory = (e) => {
+    setTypeOfFood(e.target.value)
+    //handleInputChange(e)
+  }
+  
     // //Cachar el nombre del cliente y mesa
     // const handleInputChange = (e) => {
     //   const {name, value} = e.target;
@@ -16,31 +21,23 @@ function ShowMenu(props) {
     // };
 
     //Estado inicial de la toma de orden
-    const initialStateValues = {      
-      client: '',
-      table: '',
-      category: '',
-      order: [ ],
-      total: 0    
-    };
-    const [values, setValues] = useState(initialStateValues);
-    //console.log(values.client)
+    // const initialStateValues = {      
+    //   client: '',
+    //   table: '',
+    //   category: '',
+    //   order: [ ],
+    //   total: 0    
+    // };
+    // const [values, setValues] = useState(initialStateValues);
+    // //console.log(values.client)
 
     //Enviar datos del formulario y resetear
-    const handleSubmit = (e) => {
-      e.preventDefault()
-      //console.log(values)
-      props.addOrEdit(values);
-      setValues({...initialStateValues})
-    };
-    const selectCategory = (e) => {
-      setTypeOfFood(e.target.value)
-      //handleInputChange(e)
-    }
-
-    // const handleItem = (e) =>{
-    //   console.log('entró', e)
-    // }
+    // const handleSubmit = (e) => {
+    //   e.preventDefault()
+    //   //console.log(values)
+    //   props.addOrEdit(values);
+    //   setValues({...initialStateValues})
+    // };
     
     return (
       <div id="menu-container">
@@ -48,30 +45,10 @@ function ShowMenu(props) {
           <input type="button" className="btn-op menu-bf" name="category" value="Desayuno" onClick={selectCategory}/> 
           <input type="button" className="btn-op menu-m" name="category" value="Comida" onClick={selectCategory}/>
         </div>
-        {/* <form onSubmit={handleSubmit}> */}
-        {/* <div id="order">
-          <label>Cliente: </label> 
-          <input 
-            type="text" 
-            name="client"
-            value={values.client}
-            onChange={handleInputChange}
-            placeholder="Nombre"
-          />
-          <label>Mesa: </label>           
-          <input id="input-table" name="table" value={values.table} onChange={handleInputChange} type="text" placeholder="0" ></input>
-          {/* <p>Conteo: {count}</p>           }
-        </div> */}
         <div id="menu">
-          { typeOfFood === 'Desayuno'? <MenuBf category={typeOfFood}/>:<MenuMeals category={typeOfFood}/> }
-          </div>
-        
-            {/* <div id="btn-send">
-            <button className="btn-op cancel" >Cancelar</button>
-            <button className="btn-op confirm" type="submit" onClick={handleSubmit} >Confirmar</button>
-            </div> */}
-            {/* </form> */}
-            </div>  
+          { typeOfFood === 'Desayuno'? <MenuBf addOrder={addOrder} category={typeOfFood}/>:<MenuMeals addOrder={addOrder} category={typeOfFood}/> }
+        </div>
+      </div>  
     )  
 }
 
