@@ -1,12 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Styles/ShowMenu.css';
 import TotalItems from './TotalItems';
-import DeleteItem from './DeleteItem';
+//import DeleteItem from './DeleteItem';
 
 const Comanda = ({order,client, table, category}) => {
  // console.log(client)
  //condicionar para que aparezca el 0 si aún no se han escogido elementos
     const totalOrder = order.length !== 0 ? order.map(product => {return product.price}):[]
+    // const deleteElem = (i) => {
+    //   console.log(i)      
+    // }
+    //Banderita
+    //const [deleteItem, setDeleteItem] = useState(false)
+    
     return (
         <section>
           <div id="resumen">
@@ -20,9 +26,10 @@ const Comanda = ({order,client, table, category}) => {
             <table id="items" key={i}>
               <td>{item.name}</td>
               <td>${item.price}</td>
-              <td><DeleteItem /></td>
+              <td><i class="fas fa-trash-alt"></i></td>
             </table>
-            ))}
+            ))
+          }
             <p><TotalItems price={totalOrder}/></p>
           </div>
           <div id="btn-send">

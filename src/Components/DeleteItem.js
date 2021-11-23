@@ -1,15 +1,15 @@
-import React, { useState } from 'react'
-import '../Components/Styles/AddItem.css'
+// import React, { useState } from 'react'
+// import '../Components/Styles/AddItem.css'
 
-function DeleteItem(){    
+// function DeleteItem(){    
 
 
-    return (
-        <i class="fas fa-trash-alt"></i>            
-    )
-}
+//     return (
+                    
+//     )
+// }
 
-export default DeleteItem
+// export default DeleteItem
 
 
 // const [count, setCount] = useState(0);

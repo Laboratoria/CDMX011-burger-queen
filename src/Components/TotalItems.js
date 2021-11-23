@@ -10,7 +10,7 @@ function TotalItems({price}){
         const suma = price.length !== 0?price.reduce((a,b) => {return a+b}):0
         // console.log(suma)
         setTotal(suma)
-    },[total, price]); //price pasa como segundo argumento
+    },[total, price]); //el estado y price pasan como segundo argumento
 
         return (
             <p id="total-price">Total: ${total}</p>

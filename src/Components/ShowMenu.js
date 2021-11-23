@@ -8,12 +8,12 @@ function ShowMenu(props) {
   //Se declara lo que quiero que cambie
   const [typeOfFood, setTypeOfFood] = useState('Desayuno');
 
-    //Cachar el nombre del cliente y mesa
-    const handleInputChange = (e) => {
-      const {name, value} = e.target;
-      //console.log(name, value)
-      setValues({...values, [name]: value})     
-    };
+    // //Cachar el nombre del cliente y mesa
+    // const handleInputChange = (e) => {
+    //   const {name, value} = e.target;
+    //   //console.log(name, value)
+    //   setValues({...values, [name]: value})     
+    // };
 
     //Estado inicial de la toma de orden
     const initialStateValues = {      
@@ -35,7 +35,7 @@ function ShowMenu(props) {
     };
     const selectCategory = (e) => {
       setTypeOfFood(e.target.value)
-      handleInputChange(e)
+      //handleInputChange(e)
     }
 
     // const handleItem = (e) =>{
@@ -63,7 +63,7 @@ function ShowMenu(props) {
           {/* <p>Conteo: {count}</p>           }
         </div> */}
         <div id="menu">
-          { typeOfFood === 'Desayuno'? <MenuBf />:<MenuMeals category={typeOfFood}/> }
+          { typeOfFood === 'Desayuno'? <MenuBf category={typeOfFood}/>:<MenuMeals category={typeOfFood}/> }
           </div>
         
             {/* <div id="btn-send">
