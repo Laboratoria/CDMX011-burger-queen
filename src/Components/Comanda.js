@@ -1,22 +1,34 @@
 import React from 'react'
 import './Styles/ShowMenu.css';
+import TotalItems from './TotalItems';
+import DeleteItem from './DeleteItem';
 
-const Comanda = ({order,client}) => {
-  console.log(client)
+const Comanda = ({order,client, table, category}) => {
+ // console.log(client)
+ //condicionar para que aparezca el 0 si aún no se han escogido elementos
+    const totalOrder = order.length !== 0 ? order.map(product => {return product.price}):[]
     return (
-        <section id="resumen">
-          <div id="resumen-header">
-            <label className="resume-values">Cliente: {" "} </label>
-            <label className="resume-values">Mesa:  </label>
-            <label className="resume-values"></label>
+        <section>
+          <div id="resumen">
+            <div id="resumen-header">
+              <label className="resume-values">Cliente: {client} </label>
+              <label className="resume-values">Mesa: {table} </label>
+              <label className="resume-values">{category}</label>
+            </div>
+            <hr/>
+            {order.map((item, i) => (
+            <table id="items" key={i}>
+              <td>{item.name}</td>
+              <td>${item.price}</td>
+              <td><DeleteItem /></td>
+            </table>
+            ))}
+            <p><TotalItems price={totalOrder}/></p>
           </div>
-          <hr/>
-          {order.map((item, i) => (
-          <div id="items" key={i}>
-            <p>{item.name}</p>
-            <p>${item.price}</p>
+          <div id="btn-send">
+            <button className="btn-op cancel" >Cancelar</button>
+            <button className="btn-op confirm" type="submit"  >Confirmar</button>
           </div>
-          ))}
         </section>
     )
 }

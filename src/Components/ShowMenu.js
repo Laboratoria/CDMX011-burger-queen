@@ -63,15 +63,13 @@ function ShowMenu(props) {
           {/* <p>Conteo: {count}</p>           }
         </div> */}
         <div id="menu">
-          {
-            typeOfFood === 'Desayuno'? <MenuBf/>:<MenuMeals/>
-          }
+          { typeOfFood === 'Desayuno'? <MenuBf />:<MenuMeals category={typeOfFood}/> }
           </div>
         
-            <div id="btn-send">
+            {/* <div id="btn-send">
             <button className="btn-op cancel" >Cancelar</button>
             <button className="btn-op confirm" type="submit" onClick={handleSubmit} >Confirmar</button>
-            </div>
+            </div> */}
             {/* </form> */}
             </div>  
     )  
