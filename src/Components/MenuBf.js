@@ -1,56 +1,53 @@
 import React, {useState} from 'react';
 import Data from '../Data/menu.json'
-import './Styles/MenuBf.css';
-import AddItem from './AddItem';
-import TotalItems from './TotalItems';
+import './Styles/Cards.css';
+import Comanda from './Comanda';
 
-function MenuBf() {
-const breakfast = Data.items.filter(item => item.category === "breakfast")
-const [cost, setCost] = useState(0)
-const [keyItem, setKeyItem] = useState(0)
 
-const catchvalue = (e, k) => {
-    console.log(e)
-    setCost(e)
-    setKeyItem(k)
+function MenuBf({category}) {
 
+const breakfast = Data.items.filter(item => item.category === "Desayuno")
+
+//Declaración del estado inicial, el valor y lo que hará que el valor cambie
+const [order, setOrder]= useState([])
+const [client, setClient]= useState([])
+const [table, setTable] = useState([])
+
+const handleName = (e) => {
+   const {value} = e.target
+    setClient(value)
+    //console.log(client)
+}
+const handleTable = (e) => {
+    const {value} = e.target
+    setTable(value)
 }
 
-    return (
-            <table className="menu-bf">
-                <thead>
-                    <tr>
-                        <th>Platillo</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {breakfast.map((item, i) => {
-                        return (
-                            <tr key={i}>
-                                <td>{item.name}</td>
-                                <td>${item.price}</td>
-                                <td>
-                                    <AddItem 
-                                    //propiedad = {funcion, string, booleano, etc}
-                                       sendvalue={catchvalue}
-                                       keyI={i}
-                                    />
-                                </td>
-                                <td>
-                                       <TotalItems
-                                           price={item.price}
-                                           cost={cost}
-                                       />
-                                </td>
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
-    )
+
+return (
+    <div>
+    <div id="order">
+          <label>Cliente: </label> 
+          <input type="text" placeholder="Nombre" name="name" value={client.value} onChange={handleName}
+           />
+          <label>Mesa: </label>           
+          <input id="input-table" type="text" placeholder="0" name="table" value={table.value} onChange={handleTable}></input>
+          
+        </div>
+    <section className="op-container-bf">
+        {breakfast.map(product => {
+        return (
+            <button className= "add-bf" key={product.id} value={product.name} onClick={()=>{setOrder([...order, {name:product.name, price:product.price}]);
+            console.log(order)}}> 
+                {product.name} <br/> ${product.price}
+            </button>
+        )})}                   
+    <Comanda order={order} client={client} table={table} category={category}/>
+    </section>
+    </div>
+      
+)
 }
 
 export default MenuBf
+

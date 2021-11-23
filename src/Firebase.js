@@ -1,8 +1,7 @@
-// Import the functions you need from the SDKs you need
 //import * as firebase from 'firebase/app';
 import { initializeApp } from "firebase/app";
 import { getFirestore, doc, setDoc } from "firebase/firestore";
-import { getAnalytics } from "firebase/analytics";
+//import { getAnalytics } from "firebase/analytics";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -22,10 +21,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-export const analytics = getAnalytics(app);
-export const db = getFirestore();
+const db = getFirestore(app);
 
 export const createOrder = (order, data) => {
+  console.log(order)
   const dateOrder = doc(db, order)
   setDoc(dateOrder, data)
 }
@@ -36,4 +35,4 @@ export const createOrder = (order, data) => {
 //export const orderCol = collection(db, 'orders');
 
 //export const database = firebase.getFirestore()
-// export default db
+export default db
