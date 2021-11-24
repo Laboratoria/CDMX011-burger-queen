@@ -4,7 +4,7 @@ import './Styles/Cards.css';
 import Comanda from './Comanda';
 
 
-function MenuBf({category}) {
+function MenuBf({category, addOrder}) {
 
 const breakfast = Data.items.filter(item => item.category === "Desayuno")
 
@@ -42,7 +42,7 @@ return (
                 {product.name} <br/> ${product.price}
             </button>
         )})}                   
-    <Comanda order={order} client={client} table={table} category={category}/>
+    <Comanda order={order} client={client} table={table} category={category} addOrder={addOrder}/>
     </section>
     </div>
       

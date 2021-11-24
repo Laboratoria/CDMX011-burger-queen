@@ -104,6 +104,7 @@ hr{
 #total_price{
     text-align: right;
     margin-right: 100px;
+    margin-bottom: 10px;
 }
 
 .btn-op {

@@ -13,7 +13,7 @@ function TotalItems({price}){
     },[total, price]); //el estado y price pasan como segundo argumento
 
         return (
-            <p id="total-price">Total: ${total}</p>
+            <div id="total-price">Total: ${total}</div>
         )
 
 }

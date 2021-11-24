@@ -23,7 +23,7 @@ const Comanda = ({order,client, table, category, addOrder}) => {
       category: category,
       order: order
   }
-  console.log(values)
+  //console.log(values)
 
   // const resetComanda = (e) => {
   //     console.log(e)
@@ -34,7 +34,7 @@ const Comanda = ({order,client, table, category, addOrder}) => {
   const handleSubmit = (e) => {
       //console.log(e)
       e.preventDefault()
-      console.log('holi', e)
+      //console.log('holi', e)
       addOrder(values);
       setValues({...initialValues});
   }
@@ -56,7 +56,7 @@ const Comanda = ({order,client, table, category, addOrder}) => {
             </table>
             ))
           }
-            <p id="total_price"><TotalItems price={totalOrder}/></p>
+            <div id="total_price"><TotalItems price={totalOrder}/></div>
             {/* {console.log(TotalItems)} */}
           </div>
           <div id="btn-send">

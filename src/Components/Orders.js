@@ -8,7 +8,7 @@ function Orders(){
 
   //Crear elemento en la colección 'order'
   const addClient = (clientData)=>{
-    console.log(clientData)
+    //console.log(clientData)
 
     const d = new Date();
     let h = d.getHours();
