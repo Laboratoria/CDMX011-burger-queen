@@ -12,25 +12,6 @@ function ShowMenu({addOrder}) {
     setTypeOfFood(e.target.value)
     //handleInputChange(e)
   }
-  
-    // //Cachar el nombre del cliente y mesa
-    // const handleInputChange = (e) => {
-    //   const {name, value} = e.target;
-    //   //console.log(name, value)
-    //   setValues({...values, [name]: value})     
-    // };
-
-    //Estado inicial de la toma de orden
-    // const initialStateValues = {      
-    //   client: '',
-    //   table: '',
-    //   category: '',
-    //   order: [ ],
-    //   total: 0    
-    // };
-    // const [values, setValues] = useState(initialStateValues);
-    // //console.log(values.client)
-
     //Enviar datos del formulario y resetear
     // const handleSubmit = (e) => {
     //   e.preventDefault()

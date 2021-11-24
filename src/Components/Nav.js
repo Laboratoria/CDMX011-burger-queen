@@ -8,7 +8,7 @@ function Nav(){
     return (
         <nav>
             <img src={LogoFig} alt="Burger-Queen-Logo" id="logo1"/>
-            <Link to='/'><button className="section btn-nav" id="btn-new-ord">Nueva orden</button></Link>
+            <Link to='/newOrder'><button className="section btn-nav" id="btn-new-ord">Nueva orden</button></Link>
             <Link to='/cooking'><button className="section btn-nav" id="btn-recep">Recepción</button></Link>
             {/* <button className="section btn-nav" id="btn-entreg">Entregas</button> */}
         </nav>

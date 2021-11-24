@@ -25,7 +25,7 @@ const handleTable = (e) => {
 
 
 return (
-    <div>
+    <div >
     <div id="order">
           <label>Cliente: </label> 
           <input type="text" placeholder="Nombre" name="name" value={client.value} onChange={handleName}
@@ -34,7 +34,7 @@ return (
           <input id="input-table" type="text" placeholder="0" name="table" value={table.value} onChange={handleTable}></input>
           
         </div>
-    <section className="op-container-bf">
+    <section className="op-container-bf menu_bf">
         {breakfast.map(product => {
         return (
             <button className= "add-bf" key={product.id} value={product.name} onClick={()=>{setOrder([...order, {name:product.name, price:product.price}]);

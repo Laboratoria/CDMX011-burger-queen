@@ -49,3 +49,12 @@ nav {
     padding-top: 20px;
     padding-bottom: 25px;
 }
+
+.image_hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+    margin-right: px;
+    margin-left:250px;
+  }

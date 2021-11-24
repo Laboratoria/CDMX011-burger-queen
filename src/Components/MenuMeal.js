@@ -25,7 +25,7 @@ const handleTable = (e) => {
 
 
     return (
-        <div>
+        <div >
         <div id="order">
           <label>Cliente: </label> 
           <input type="text" placeholder="Nombre" name="name" value={client.value} onChange={handleName}
@@ -37,7 +37,7 @@ const handleTable = (e) => {
         <section className="op-container">
             {meals.map(product =>  (
                 <button className= "add-meals" key={product.id} value={product.name} onClick={()=>{setOrder([...order, {name:product.name, price:product.price}]);
-            console.log(order)}}> 
+            }}> 
                     {product.name} <br/> ${product.price}
                 </button>
             ))}   
