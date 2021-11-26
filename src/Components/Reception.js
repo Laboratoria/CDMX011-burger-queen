@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Header from './Header';
 import Nav from './Nav';
-//import {collection , getDocs} from 'firebase/firestore'
+import './Styles/Reception.css'
 import {collection, query, onSnapshot} from 'firebase/firestore'
 import db from '../firebase'
 
@@ -34,15 +34,15 @@ function Cooking(){
 
     return (
         <section>
-            {/* <Header />
-            <Nav /> */}
-            <div>
+            <Header />
+            <Nav />
+            <div id="comanda-container">
                 {comanda.map((item, i) => {
                     return (
-                    <section key={i}>
-                        <p>{item.client}</p>
+                    <section className="card-comanda" key={i}>
+                        <h1>{item.client}</h1>
                         {item.order.map((elem, i) => {
-                            return (<p key={i}>{elem.name}</p>)
+                            return (<ol key={i}>{elem.name}</ol>)
                         })}
                     </section>
                     )

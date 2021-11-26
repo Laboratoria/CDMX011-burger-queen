@@ -1,0 +1,13 @@
+#comanda-container{
+    margin-left: 300px;
+    margin-top: 120px;
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+    height: 900px;
+}
+.card-comanda{
+    background: palevioletred;
+    height: min-content;
+    width: min-content;
+}
