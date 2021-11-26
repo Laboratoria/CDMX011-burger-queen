@@ -1,17 +1,14 @@
-//import { createOrder } from '../firebase.js'
 import React from 'react';
-
 import Header from './Header';
 import Nav from './Nav';
 import ShowMenu from './ShowMenu';
-//import { getFirestore } from '@firebase/firestore';
 import {createOrder} from '../firebase'
 
 function Orders(){
 
   //Crear elemento en la colección 'order'
   const addClient = (clientData)=>{
-    console.log(clientData)
+    //console.log(clientData)
 
     const d = new Date();
     let h = d.getHours();

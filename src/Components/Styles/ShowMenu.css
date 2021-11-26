@@ -89,6 +89,23 @@ hr{
     justify-content: space-around;
 }
 
+ table{
+    margin-left: 60px;
+} 
+
+#dish{
+    width: 250px;
+}
+
+.priceTrash{
+    width: 100px;
+}
+
+#total_price{
+    text-align: right;
+    margin-right: 100px;
+    margin-bottom: 10px;
+}
 
 .btn-op {
     width: 170px;

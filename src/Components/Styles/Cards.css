@@ -1,6 +1,6 @@
 .op-container{
     display: flex;
-   height: 200px;
+   /* height: 200px; */
    flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 180px;
@@ -20,14 +20,12 @@
 
 .op-container-bf{
     display: flex;
-   height: 200px;
+   height: 500px;
    width: 400px;
-   align-content: center;
+   padding-top: 0px;
    flex-wrap: wrap;
    justify-content: space-around;
-   margin-top: 90px;
-   margin-bottom: 180px;
-   margin-left: 100px;
+   
 }
 
 .add-bf{
@@ -42,4 +40,19 @@
     padding-bottom: 10px;
     margin-left: 10px;
     
+}
+.menu_bf{
+    /* background-color: green; */
+    display: flex;
+    /* justify-self:center; */
+    /* align-self:center; */
+    /* flex-wrap: wrap; */
+    /* align-content: space-around; */
+    /* align-content: center; */
+    margin-top: 20px;
+    /* margin-bottom: 20px; */
+    margin-left: -10px;
+    width: 600px;
+    height: 300px;
+    position: static;
 }

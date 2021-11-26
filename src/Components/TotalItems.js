@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './Styles/ShowMenu.css';
 
-function TotalItems({price}){
-    //console.log(price)
+function TotalItems({price, order}){
+    console.log(order)
     const [total, setTotal] = useState(0)
 
     useEffect(() => {
@@ -13,7 +13,7 @@ function TotalItems({price}){
     },[total, price]); //el estado y price pasan como segundo argumento
 
         return (
-            <p id="total-price">Total: ${total}</p>
+            <div id="total-price">Total: ${total}</div>
         )
 
 }

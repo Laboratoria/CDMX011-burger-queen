@@ -13,6 +13,14 @@ const [order, setOrder]= useState([])
 const [client, setClient]= useState([])
 const [table, setTable] = useState([])
 
+const empty = "";
+
+const resetElem = (e) => {
+    setOrder([])
+    setClient(empty)
+    setTable(empty)
+}
+
 const handleName = (e) => {
    const {value} = e.target
     setClient(value)
@@ -23,9 +31,33 @@ const handleTable = (e) => {
     setTable(value)
 }
 
+const onAdd = (item) => {
+    const exist = order.find(x => x.id === item.id);
+    if(exist) {
+        setOrder(
+            order.map((x) => (x.id === item.id ? { ...exist, qty: exist.qty + 1 } : x))
+            
+        );
+    } else {
+        setOrder([...order, {...item, qty:1}])
+    }
+}
+
+const onRemove = (item) => {
+    const exist = order.find(x => x.id === item.id);
+    if(exist.qty === 1) {
+        setOrder(
+            order.filter((x) => (x.id !== item.id))  
+        );
+    } else {
+        setOrder(
+            order.map((x) => x.id === item.id ? {...exist, qty: exist.qty -1} : x ))
+    }
+}
+
 
     return (
-        <div>
+        <div >
         <div id="order">
           <label>Cliente: </label> 
           <input type="text" placeholder="Nombre" name="name" value={client.value} onChange={handleName}
@@ -36,12 +68,13 @@ const handleTable = (e) => {
         </div>
         <section className="op-container">
             {meals.map(product =>  (
-                <button className= "add-meals" key={product.id} value={product.name} onClick={()=>{setOrder([...order, {name:product.name, price:product.price}]);
-            console.log(order)}}> 
+                <button className= "add-meals" key={product.id} value={product.name} onClick={()=>{setOrder([...order, {name:product.name, price:product.price, id:product.id}]);
+                onAdd(product)
+            }}> 
                     {product.name} <br/> ${product.price}
                 </button>
             ))}   
-        <Comanda addOrder={addOrder} order={order} client={client} table={table} category={category}/>
+        <Comanda reset={resetElem} onRemove={onRemove} onAdd={onAdd} addOrder={addOrder} order={order} client={client} table={table} category={category}/>
         </section>
         </div>  
     )
