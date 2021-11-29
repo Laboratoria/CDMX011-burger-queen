@@ -7,7 +7,8 @@
     height: 900px;
 }
 .card-comanda{
-    background: palevioletred;
-    height: min-content;
-    width: min-content;
+    background-image: url("https://i.pinimg.com/originals/54/bb/56/54bb56c7785472bd54344e054e539324.jpg");
+    width: 20%;
+    height: 20%;
+
 }

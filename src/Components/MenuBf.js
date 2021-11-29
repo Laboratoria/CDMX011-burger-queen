@@ -4,6 +4,7 @@ import './Styles/Cards.css';
 import Comanda from './Comanda';
 
 
+
 function MenuBf({category, addOrder}) {
 
 const breakfast = Data.items.filter(item => item.category === "Desayuno")
@@ -17,6 +18,7 @@ const empty = "";
 
 const resetElem = (e) => {
     setOrder([])
+    e.target.value = empty
     setClient(empty)
     setTable(empty)
 }

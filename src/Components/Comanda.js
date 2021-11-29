@@ -9,6 +9,8 @@ const Comanda = ({order,client, table, category, addOrder, onRemove, onAdd, rese
  //condicionar para que aparezca el 0 si aún no se han escogido elementos
     const totalOrder = order.length !== 0 ? order.map(product => { return product.price} ):[]
   
+  //date: firebase.firestore.Timestamp.fromDate(new Date())
+
   // const initialValues = {
   //     client:'',
   //     table: '',
