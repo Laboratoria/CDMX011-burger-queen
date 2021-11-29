@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Header from './Header';
 import Nav from './Nav';
 import './Styles/Reception.css'
-import {collection, query, onSnapshot, orderBy, updateDoc, serverTimestamp, doc} from 'firebase/firestore'
+import {collection, query, onSnapshot, orderBy } from 'firebase/firestore'
 import db from '../firebase'
 
 function Cooking(){
@@ -37,7 +37,7 @@ function Cooking(){
         <section>
             <Header />
             <Nav />
-            <div  id="comanda-container">
+            <div id="comanda-container">
                 {comanda.map((item, i) => {
                     return (
                     <section className="card-comanda" key={i}>
