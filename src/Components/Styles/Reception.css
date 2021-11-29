@@ -7,7 +7,6 @@
     height: 900px;
 }
 .card-comanda{
-    background: palevioletred;
-    height: min-content;
-    width: min-content;
+    background-image: url('../../assets/postit.png');
+
 }

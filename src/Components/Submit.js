@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { serverTimestamp } from 'firebase/firestore'
 //import TotalItems from './TotalItems'
 
 const Submit = ({order, client,  table, category, addOrder, reset}) => {
@@ -15,7 +16,8 @@ const initialValues = {
         client: client,
         table: table,
         category: category,
-        order: order
+        order: order,
+        createdTime: serverTimestamp()
     }
     //console.log(values)
 

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './Styles/ShowMenu.css';
 
 function TotalItems({price, order}){
-    console.log(order)
+    //console.log(order)
     const [total, setTotal] = useState(0)
 
     useEffect(() => {

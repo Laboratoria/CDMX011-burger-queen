@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Header from './Header';
 import Nav from './Nav';
 import './Styles/Reception.css'
-import {collection, query, onSnapshot} from 'firebase/firestore'
+import {collection, query, onSnapshot, orderBy, updateDoc, serverTimestamp, doc} from 'firebase/firestore'
 import db from '../firebase'
 
 function Cooking(){
@@ -15,8 +15,9 @@ function Cooking(){
     //     })
     // }
     const [comanda, setComanda] = useState([])
-    const getOrders = query(collection(db, "order"));
+    const getOrders = query(collection(db, "order"), orderBy("createdTime", "asc") );
 
+   
     useEffect(() => {
         const allOrders = async () => {onSnapshot(getOrders, (querySnapshot) => {
             const orders =[];
@@ -25,7 +26,7 @@ function Cooking(){
                 // console.log(doc.id)            
                  orders.push({...doc.data(), id:doc.id});
             });
-            //console.log(orders)
+            //console.log()
             setComanda(orders);
         })}
        allOrders();
@@ -36,14 +37,22 @@ function Cooking(){
         <section>
             <Header />
             <Nav />
-            <div id="comanda-container">
+            <div  id="comanda-container">
                 {comanda.map((item, i) => {
                     return (
                     <section className="card-comanda" key={i}>
+                         
                         <h1>{item.client}</h1>
                         {item.order.map((elem, i) => {
-                            return (<ol key={i}>{elem.name}</ol>)
+                            return (
+                                <ul>
+                                <li key={i}>{elem.qty}</li>   
+                                <li>{elem.name}</li>
+                                </ul>
+                                )
                         })}
+                       
+                        {/* <p>{item.Timestamp(new Date())}</p> */}
                     </section>
                     )
                 })}
