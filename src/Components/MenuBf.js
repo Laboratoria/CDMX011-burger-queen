@@ -18,6 +18,7 @@ const empty = "";
 
 const resetElem = (e) => {
     setOrder([])
+    e.target.value = empty
     setClient(empty)
     setTable(empty)
 }

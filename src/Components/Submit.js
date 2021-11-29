@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { serverTimestamp } from 'firebase/firestore'
-//import TotalItems from './TotalItems'
 
 const Submit = ({order, client,  table, category, addOrder, reset}) => {
 
@@ -19,9 +18,7 @@ const initialValues = {
         order: order,
         createdTime: serverTimestamp()
     }
-    //console.log(values)
-
-    
+      
 
     // useEffect(()=> {
     //     const handleSubmit = (e) => {
@@ -46,24 +43,28 @@ const initialValues = {
 
     // },[order, client,  table, category, addOrder, values]
     // )
+
+    const resetPage = (e) => {
+        setValues({...initialValues})
+        reset(e)
+    }
+
     const resetComanda = (e) => {
-        console.log(e)
+        //console.log(e)
         handleSubmit(e)
         setValues({...initialValues})
         reset(e)
         }
 
     const handleSubmit = (e) => {
-        //console.log(e)
         e.preventDefault()
-        console.log('holi', e)
+        //console.log('holi', e)
         addOrder(values)
-        //setValues({...initialValues})
     }
 
     return (
         <div id="btn-send">
-            <button className="btn-op cancel" >Cancelar</button>
+            <button className="btn-op cancel" type="submit" onClick={resetPage}>Cancelar</button>
             <button className="btn-op confirm" type="submit" onClick={resetComanda} >Confirmar</button>
         </div>
     )
