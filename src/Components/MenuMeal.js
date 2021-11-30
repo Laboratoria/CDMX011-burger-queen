@@ -3,7 +3,6 @@ import Data from '../Data/menu.json'
 import './Styles/Cards.css';
 import Comanda from './Comanda';
 
-
 function MenuMeals({category, addOrder}) {
 
 const meals = Data.items.filter(item => item.category === "Comida" || item.category === "extra")
@@ -22,8 +21,8 @@ const resetElem = (e) => {
 const handleName = (e) => {
    const {value} = e.target
     setClient(value)
-    //console.log(client)
 }
+
 const handleTable = (e) => {
     const {value} = e.target
     setTable(value)
@@ -52,7 +51,6 @@ const onRemove = (item) => {
             order.map((x) => x.id === item.id ? {...exist, qty: exist.qty -1} : x ))
     }
 }
-
 
     return (
         <div >

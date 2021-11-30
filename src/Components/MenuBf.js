@@ -3,8 +3,6 @@ import Data from '../Data/menu.json'
 import './Styles/Cards.css';
 import Comanda from './Comanda';
 
-
-
 function MenuBf({category, addOrder}) {
 
 const breakfast = Data.items.filter(item => item.category === "Desayuno")
@@ -24,12 +22,12 @@ const resetElem = (e) => {
 const handleName = (e) => {
    const {value} = e.target
     setClient(value)
-    //console.log(client)
-};
+}
+
 const handleTable = (e) => {
     const {value} = e.target
     setTable(value)
-};
+}
 
 const onAdd = (item) => {
     const exist = order.find(x => x.id === item.id);

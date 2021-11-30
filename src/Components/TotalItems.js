@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import './Styles/ShowMenu.css';
 
 function TotalItems({price, order}){
-    //console.log(order)
     const [total, setTotal] = useState(0)
 
     const multPrice = order.map((item => { return  (item.qty*item.price)}))
@@ -10,7 +9,6 @@ function TotalItems({price, order}){
     useEffect(() => {
         
         const suma = multPrice.length !== 0?multPrice.reduce((a,b) => {return a+b}):0
-        //console.log(suma)
         setTotal(suma)
     },[total, price, multPrice]);
 

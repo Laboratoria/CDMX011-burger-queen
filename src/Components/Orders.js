@@ -2,13 +2,11 @@ import React from 'react';
 import Header from './Header';
 import Nav from './Nav';
 import ShowMenu from './ShowMenu';
-import {createOrder} from '../firebase'
+import {createOrder} from '../firebase.js'
 
 function Orders(){
 
-  //Crear elemento en la colección 'order'
   const addClient = (clientData)=>{
-    //console.log(clientData)
 
     const d = new Date();
     let h = d.getHours();
@@ -17,7 +15,6 @@ function Orders(){
     let time = d + h + ":" + m + ":" + s;
     
     createOrder(`order/${time}`, clientData)
-    //addClientFirebase(clientData)
     console.log('nueva orden agregada')
   }
 
@@ -27,7 +24,6 @@ function Orders(){
       >
         <Header />
         <Nav />
-        {/* <ShowMenu /> */}
         <ShowMenu addOrder={addClient}/>
       
       </section> 
