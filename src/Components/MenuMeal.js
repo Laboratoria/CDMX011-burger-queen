@@ -10,15 +10,13 @@ const meals = Data.items.filter(item => item.category === "Comida" || item.categ
 
 //Declaración del estado inicial, el valor y lo que hará que el valor cambie
 const [order, setOrder]= useState([])
-const [client, setClient]= useState([])
-const [table, setTable] = useState([])
-
-const empty = "";
+const [client, setClient]= useState("")
+const [table, setTable] = useState("")
 
 const resetElem = (e) => {
     setOrder([])
-    setClient(empty)
-    setTable(empty)
+    setClient("")
+    setTable("")
 }
 
 const handleName = (e) => {
@@ -60,10 +58,10 @@ const onRemove = (item) => {
         <div >
         <div id="order">
           <label>Cliente: </label> 
-          <input type="text" placeholder="Nombre" name="name" value={client.value} onChange={handleName}
+          <input type="text" placeholder="Nombre" name="name" value={client} onChange={handleName}
            />
           <label>Mesa: </label>           
-          <input id="input-table" type="text" placeholder="0" name="table" value={table.value} onChange={handleTable}></input>
+          <input id="input-table" type="text" placeholder="0" name="table" value={table} onChange={handleTable}></input>
           
         </div>
         <section className="op-container">

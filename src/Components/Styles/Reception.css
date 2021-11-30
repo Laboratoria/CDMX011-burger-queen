@@ -1,14 +1,18 @@
-#comanda-container{
+#comanda-container {
     margin-left: 300px;
     margin-top: 120px;
     display: flex;
-    flex-direction: row;
-    width: 700px;
+    flex-direction: column;
+    width: 900px;
     height: 900px;
-}
-.card-comanda{
-    background-image: url("https://i.pinimg.com/originals/54/bb/56/54bb56c7785472bd54344e054e539324.jpg");
-    width: 20%;
-    height: 20%;
-
-}
+    overflow: scroll;
+  }
+  .card-comanda {
+    background-image: url("../../assets/postit.png");
+    background-size: auto 100px;
+    height: auto;
+    width: 400px;
+    /* margin-bottom: 20px;
+    padding-bottom: 50px; */
+  }
+  

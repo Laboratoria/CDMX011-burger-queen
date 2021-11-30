@@ -11,16 +11,14 @@ const breakfast = Data.items.filter(item => item.category === "Desayuno")
 
 //Declaración del estado inicial, el valor y lo que hará que el valor cambie
 const [order, setOrder]= useState([]);
-const [client, setClient]= useState([]);
-const [table, setTable] = useState([]);
+const [client, setClient]= useState("");
+const [table, setTable] = useState("");
 
-const empty = "";
 
 const resetElem = (e) => {
     setOrder([])
-    e.target.value = empty
-    setClient(empty)
-    setTable(empty)
+    setClient("")
+    setTable("")
 }
 
 const handleName = (e) => {
@@ -62,10 +60,10 @@ return (
     <div >
     <div id="order">
           <label>Cliente: </label> 
-          <input type="text" placeholder="Nombre" name="name" value={client.value} onChange={handleName} onSubmit={resetElem}
+          <input type="text" placeholder="Nombre" name="name" value={client} onChange={handleName} onSubmit={resetElem}
            />
           <label>Mesa: </label>           
-          <input id="input-table" type="text" placeholder="0" name="table" value={table.value} onChange={handleTable}></input>
+          <input id="input-table" type="text" placeholder="0" name="table" value={table} onChange={handleTable}></input>
           
         </div>
     <section className="op-container-bf menu_bf">

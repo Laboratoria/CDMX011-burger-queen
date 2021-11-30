@@ -45,14 +45,14 @@ const initialValues = {
     // )
 
     const resetPage = (e) => {
-        setValues({...initialValues})
+        alert("¿Estás seguro?")
         reset(e)
     }
 
     const resetComanda = (e) => {
         //console.log(e)
         handleSubmit(e)
-        setValues({...initialValues})
+        // setValues({...initialValues})
         reset(e)
         }
 
