@@ -6,14 +6,6 @@ import {collection, query, onSnapshot, orderBy } from 'firebase/firestore'
 import db from '../firebase'
 
 function Cooking(){
-    // const obtenerDatos = async() => {
-    //     const orders = await getDocs(collection(db, 'order'))
-    //     //console.log(orders.docs.data())
-    //     orders.forEach((documento)=> {
-    //         console.log(documento.data())
-    //         //return documento.data()
-    //     })
-    // }
     const [comanda, setComanda] = useState([])
     const getOrders = query(collection(db, "order"), orderBy("createdTime", "asc") );
 
@@ -21,12 +13,9 @@ function Cooking(){
     useEffect(() => {
         const allOrders = async () => {onSnapshot(getOrders, (querySnapshot) => {
             const orders =[];
-            querySnapshot.forEach((doc) => {
-                // console.log(doc.data())
-                // console.log(doc.id)            
+            querySnapshot.forEach((doc) => {     
                  orders.push({...doc.data(), id:doc.id});
             });
-            //console.log()
             setComanda(orders);
         })}
        allOrders();
@@ -45,14 +34,18 @@ function Cooking(){
                         <h1>{item.client}</h1>
                         {item.order.map((elem, i) => {
                             return (
-                                <ul>
-                                <li key={i}>{elem.qty}</li>   
-                                <li>{elem.name}</li>
-                                </ul>
+                                <table key={i}>
+                                    <tbody>
+                                        <tr>
+                                            <td>{elem.qty}</td>   
+                                            <td>{elem.name}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
                                 )
                         })}
                        
-                        {/* <p>{item.Timestamp(new Date())}</p> */}
                     </section>
                     )
                 })}

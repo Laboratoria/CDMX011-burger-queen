@@ -8,40 +8,7 @@ const Comanda = ({order,client, table, category, addOrder, onRemove, onAdd, rese
  
  //condicionar para que aparezca el 0 si aún no se han escogido elementos
     const totalOrder = order.length !== 0 ? order.map(product => { return product.price} ):[]
-  
-  //date: firebase.firestore.Timestamp.fromDate(new Date())
 
-  // const initialValues = {
-  //     client:'',
-  //     table: '',
-  //     category: '',
-  //     order: [],
-      
-  // }
-  // let [values, setValues] = useState(initialValues)
-
-  // values = {
-  //     client: client,
-  //     table: table,
-  //     category: category,
-  //     order: order
-  // }
-  //console.log(values)
-
-  // const resetComanda = (e) => {
-  //     console.log(e)
-  //     handleSubmit(e)
-  //     setValues({...initialValues})
-  // }
-
-  //Enviar los datos de la orden a Firebase
-  // const handleSubmit = (e) => {
-  //     //console.log(e)
-  //     e.preventDefault()
-  //     //console.log('holi', e)
-  //     addOrder(values);
-  //     //setValues({...initialValues});
-  // }
     
     return (
         <div>
@@ -55,11 +22,15 @@ const Comanda = ({order,client, table, category, addOrder, onRemove, onAdd, rese
             {order.map((item, i) => (
               
             <table id="items" key={i}>
-              <td id="dish">{item.name}</td>
-              <td className='priceTrash'>{item.qty} x ${item.price}</td>            
-              <td><button onClick={()=>{onAdd(item)}}>+</button></td>
-              <td><button onClick={()=>{onRemove(item)}}>-</button></td>
-              <td className='priceTrash'><i className="fas fa-trash-alt"></i></td> 
+              <tbody>
+                <tr>
+                  <td id="dish">{item.name}</td>
+                  <td className='priceTrash'>{item.qty} x ${item.price}</td>            
+                  <td><button onClick={()=>{onAdd(item)}}>+</button></td>
+                  <td><button onClick={()=>{onRemove(item)}}>-</button></td>
+                  <td className='priceTrash'><i className="fas fa-trash-alt"></i></td> 
+                </tr>
+              </tbody>
             </table>
             ))
           }
@@ -67,10 +38,6 @@ const Comanda = ({order,client, table, category, addOrder, onRemove, onAdd, rese
               <TotalItems order={order} price={totalOrder}/>
             </div>
           </div>
-          {/* <div id="btn-send">
-            <button className="btn-op cancel" >Cancelar</button>
-            <button className="btn-op confirm" type="submit" onClick= {handleSubmit} >Confirmar</button>
-        </div> */}
           <Submit reset={reset} addOrder={addOrder} order={order} client={client} table={table} category={category} price={totalOrder} />
         </div>
     )

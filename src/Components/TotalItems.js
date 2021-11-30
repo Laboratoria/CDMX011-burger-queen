@@ -10,7 +10,6 @@ function TotalItems({price, order}){
     useEffect(() => {
         
         const suma = multPrice.length !== 0?multPrice.reduce((a,b) => {return a+b}):0
-        //console.log(suma)
         setTotal(suma)
     },[total, price, multPrice]);
 

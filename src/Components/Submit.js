@@ -9,7 +9,7 @@ const initialValues = {
         category: '',
         order: []
 }
-    let [values, setValues] = useState(initialValues)
+    let [values, ] = useState(initialValues)
 
     values = {
         client: client,
@@ -18,41 +18,14 @@ const initialValues = {
         order: order,
         createdTime: serverTimestamp()
     }
-      
-
-    // useEffect(()=> {
-    //     const handleSubmit = (e) => {
-    //         console.log(e)
-    //         // e.preventDefault()
-    //         console.log('holi', e)
-    //         addOrder(values)
-    //         setValues({
-    //             client:'',
-    //             table: '',
-    //             category: '',
-    //             order: []
-    //         })
-    //     }
-    //     handleSubmit();
-    //     return ({
-    //         client:'',
-    //         table: '',
-    //         category: '',
-    //         order: []
-    //     })
-
-    // },[order, client,  table, category, addOrder, values]
-    // )
-
+  
     const resetPage = (e) => {
         alert("¿Estás seguro?")
         reset(e)
     }
 
     const resetComanda = (e) => {
-        //console.log(e)
         handleSubmit(e)
-        // setValues({...initialValues})
         reset(e)
         }
 

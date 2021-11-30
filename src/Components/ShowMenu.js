@@ -10,15 +10,8 @@ function ShowMenu({addOrder}) {
   
   const selectCategory = (e) => {
     setTypeOfFood(e.target.value)
-    //handleInputChange(e)
   }
-    //Enviar datos del formulario y resetear
-    // const handleSubmit = (e) => {
-    //   e.preventDefault()
-    //   //console.log(values)
-    //   props.addOrEdit(values);
-    //   setValues({...initialStateValues})
-    // };
+  
     
     return (
       <div id="menu-container">

@@ -27,7 +27,6 @@ function Orders(){
       >
         <Header />
         <Nav />
-        {/* <ShowMenu /> */}
         <ShowMenu addOrder={addClient}/>
       
       </section> 

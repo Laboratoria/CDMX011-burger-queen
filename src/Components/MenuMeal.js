@@ -22,8 +22,8 @@ const resetElem = (e) => {
 const handleName = (e) => {
    const {value} = e.target
     setClient(value)
-    //console.log(client)
 }
+
 const handleTable = (e) => {
     const {value} = e.target
     setTable(value)
