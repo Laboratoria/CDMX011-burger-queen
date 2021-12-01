@@ -101,6 +101,15 @@ hr{
     width: 100px;
 }
 
+.qty-item{
+    border-radius: 10px;
+    background-color:rgb(119, 51, 119);
+    color: white;
+    font-size: 20px;
+    height: 30px;
+    width: 30px;
+}
+
 #total_price{
     text-align: right;
     margin-right: 100px;

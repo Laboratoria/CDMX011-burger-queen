@@ -24,9 +24,9 @@ const Comanda = ({order,client, table, category, addOrder, onRemove, onAdd, rese
                 <tr>
                   <td id="dish">{item.name}</td>
                   <td className='priceTrash'>{item.qty} x ${item.price}</td>            
-                  <td><button onClick={()=>{onAdd(item)}}>+</button></td>
-                  <td><button onClick={()=>{onRemove(item)}}>-</button></td>
-                  <td className='priceTrash'><i className="fas fa-trash-alt"></i></td> 
+                  <td><button className="qty-item" onClick={()=>{onAdd(item)}}>+</button></td>
+                  <td><button className="qty-item" onClick={()=>{onRemove(item)}}>-</button></td>
+                  {/* <td className='priceTrash'><i className="fas fa-trash-alt"></i></td>  */}
                   </tr>
               </tbody>
             </table>

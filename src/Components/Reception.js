@@ -30,21 +30,25 @@ function Cooking(){
             <div id="comanda-container">
                 {comanda.map((item, i) => {
                     return (
-                    <section className="card-comanda" key={i}>
+                    <section id="postit">
+                        <div className="card-comanda" key={i}>
                          
-                        <h1>{item.client}</h1>
-                        {item.order.map((elem, i) => {
+                        <h2>Cliente: {item.client}</h2>
+                        <h1>Mesa: {item.table}</h1>
+                        {/* <h1>Categoría: {item.category}</h1> */}
+                        {item.order.map((elem, i, j) => {
                             return (
-                                <table key={i}>
-                                    <tbody>
-                                        <tr>
-                                            <td>{elem.qty}</td>   
-                                            <td>{elem.name}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                // <table key={i}>
+                                //     <tbody>
+                                         <div>
+                                            <p key={i}>{elem.qty} {elem.name}</p>  
+                                            <p key={j}>{elem.createdTime}</p> 
+                                        </div>
+                                    /*</tbody>
+                                </table> */
                                 )
                         })}
+                        </div>
                     </section>
                     )
                 })}
