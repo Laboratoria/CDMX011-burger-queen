@@ -1,3 +1,4 @@
+/* Div contenedor de #menu, #order y los botones de categoría */
 #menu-container {
     display: flex;
     flex-direction: column;
@@ -6,27 +7,26 @@
     padding-top: 120px;
     padding-left: 390px;
     height: max-content;
-    width: 500px;
+    width: 550px;
+    
 }
-
+/* Div que contiene los botones de opciones y a #order (los dos menús)*/
 #menu{
     display: flex;
     justify-self:center;
     align-self:center;
     flex-wrap: wrap;
-    /* align-content: space-around; */
-    /* align-content: center; */
     margin-top: 20px;
-    /* margin-bottom: 20px; */
     width: 600px;
     height: 300px;
 }
 
+/* Div con el input y label del cliente y mesa */
 #order{
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 20px;    
 }
 
 input{
@@ -46,18 +46,29 @@ label{
 }
 
 #input-table{
-    width: 35px;
+    width: 35px;    
 }
 
+/* ----- COMANDA -----  */
+/* Para BF */
+/* #comanda-container{
+    width:600px;
+    height: 600px;
+    margin-left: 1225px;
+    margin-top: -550px;
+} */
+
+/* Div contenedor de la comanda */
 #resumen{
     background-color: #F3DB85;
     border-radius: 10px;
     width: 600px;
-    height: max-content;
-    align-self: center;
+    height: auto; 
+    align-self: center; 
     margin-top: 35px;
-    margin-bottom: 25px;
+    margin-bottom: 25px; 
     padding-bottom: 1px;
+    /* overflow: scroll; */
 }
 
 #resumen-header {
@@ -87,6 +98,7 @@ hr{
 #btn-options, #btn-send{
     display: flex;
     justify-content: space-around;
+    border:none;
 }
 
  table{
@@ -108,6 +120,7 @@ hr{
     font-size: 20px;
     height: 30px;
     width: 30px;
+    border: none;
 }
 
 #total_price{
@@ -127,6 +140,7 @@ hr{
     font-weight: normal;
     font-size: 24px;
     transition: all .2s ease;
+    border:none;
 }
 
 .btn-op:hover{
@@ -135,8 +149,10 @@ hr{
 
 .confirm {
     background: #8BAF3F;
+    border:none;
 }
 
 .cancel{
     background: #D2453C;
+    border:none;
 }

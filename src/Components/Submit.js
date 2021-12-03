@@ -9,6 +9,9 @@ const initialValues = {
         category: '',
         order: []
 }
+
+let [status] = useState('En proceso')
+
     let [values] = useState(initialValues)
 
     values = {
@@ -16,7 +19,8 @@ const initialValues = {
         table: table,
         category: category,
         order: order,
-        createdTime: serverTimestamp()
+        createdTime: serverTimestamp(),
+        status: status
     }
 
     const resetPage = (e) => {

@@ -1,3 +1,4 @@
+/*Contenedor de las órdenes guardadas*/
 #comanda-container {
     margin-left: 300px;
     margin-top: 120px;
@@ -10,6 +11,7 @@
     overflow: scroll;
   }
 
+  /*Contenedor de cada orden en Reception*/
   #postit{
     background-image: url("../../assets/purple-postit.png");
     /* background: #ffc4009c; */
@@ -25,8 +27,8 @@
 
   .card-comanda {   
       overflow: scroll;
-    height: 300px;   
-    margin-top: 30px;
+    /* height: 300px;   
+    margin-top: 30px; */
 }
 
 h1, h2{     

@@ -53,7 +53,7 @@ const onRemove = (item) => {
 }
 
     return (
-        <div >
+        <div>
         <div id="order">
           <label>Cliente: </label> 
           <input type="text" placeholder="Nombre" name="name" value={client} onChange={handleName}

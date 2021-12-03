@@ -16,6 +16,7 @@
     font-size: 16px;
     padding-top: 10px;
     padding-bottom: 10px;
+    border:none;
 }
 
 .op-container-bf{
@@ -39,6 +40,8 @@
     padding-top: 10px;
     padding-bottom: 10px;
     margin-left: 10px;
+    border:none;
+    
     
 }
 .menu_bf{
