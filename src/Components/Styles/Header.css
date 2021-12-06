@@ -5,16 +5,23 @@
     left: 0px;
     top: 0px;
     background: #F3DB85;
-    /* display: flex;
-    flex-direction: row; */
+    display: flex;
+    align-content: space-between;
     padding-left: 45px;
     
 }
 #logo2{
-    position: absolute;
+    /* position: absolute; */
     height: 100%;
     left: 45px;
     top: 3px;
+}
+
+#time{
+    margin-top: 35px;
+    margin-left: 500px;
+    font-size: 25px;
+    color: #6f1a70;
 }
 /* .btn-nav {
     width: 200px;
