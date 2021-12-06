@@ -16,7 +16,7 @@ const firebaseConfig = {
   storageBucket: "burger-queen-af35f.appspot.com",
   messagingSenderId: "311499227176",
   appId: "1:311499227176:web:fade589e76928edb3c751d",
-  measurementId: "G-6BQST5S2QC"
+  measurementId: "G-6BQST5S2QC",
 };
 
 // Initialize Firebase
@@ -24,10 +24,10 @@ export const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export const createOrder = (order, data) => {
-  console.log(order)
-  const dateOrder = doc(db, order)
-  setDoc(dateOrder, data)
-}
+  console.log(order);
+  const dateOrder = doc(db, order);
+  setDoc(dateOrder, data);
+};
 
 // export const addClientFirebase = (data) => {
 // }
@@ -35,4 +35,4 @@ export const createOrder = (order, data) => {
 //export const orderCol = collection(db, 'orders');
 
 //export const database = firebase.getFirestore()
-export default db
+export default db;

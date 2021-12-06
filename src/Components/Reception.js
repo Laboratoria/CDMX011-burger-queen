@@ -4,6 +4,7 @@ import Nav from './Nav';
 import './Styles/Reception.css'
 import {collection, query, onSnapshot, orderBy } from 'firebase/firestore'
 import db from '../firebase'
+import check from  '../assets/check.png'
 
 function Cooking(){
   
@@ -12,10 +13,11 @@ function Cooking(){
 
     //let [setStatus] = useState('En proceso')
     
-    // const handleStatus = (e) => {
-
-    //     setStatus('Listo para entregar')
-    // }
+    const handleStatus = (e) => {
+        
+        console.log(e, comanda)
+        //setStatus('Listo para entregar')
+    }
 
    
     useEffect(() => {
@@ -60,12 +62,13 @@ function Cooking(){
                                 )
                             })}
                         <hr/>
+                        <p>Creada: {item.id.slice(4,25)}</p>
                         </div>
                         
                         <div id="order-info">
-                            <p>Creada: {item.id.slice(4,25)}</p>
+                            
                             <h1 id="status">{item.status}</h1>
-                            <img src="../assets/check.png" alt="OK"></img>
+                            <img id="check" src={check} alt="OK" key={item.id} onClick={handleStatus}></img>
                         </div>        
                          
                         {/* <button onClick={handleStatus}>Lista</button> */}
