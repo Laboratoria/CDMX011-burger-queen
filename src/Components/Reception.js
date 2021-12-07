@@ -5,6 +5,7 @@ import {
   onSnapshot,
   orderBy,
   updateDoc,
+  serverTimestamp
 } from "firebase/firestore";
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
@@ -12,6 +13,7 @@ import Nav from "./Nav";
 import "./Styles/Reception.css";
 import db from "../firebase";
 import check from "../assets/check.png";
+import delivery from "../assets/delivery.png"
 
 function Cooking() {
   const [comanda, setComanda] = useState([]);
@@ -25,7 +27,7 @@ function Cooking() {
     if (status === "En proceso") {
       const orderRef = doc(db, "order", id);
       updateDoc(orderRef, {
-        status: "Preparado",
+        status: "Preparado", cooked: serverTimestamp()
       });
       console.log("Status actualizado");
     }
@@ -74,6 +76,7 @@ function Cooking() {
                 })}
                 <hr />
                 <p>Creada: {item.id.slice(4, 25)}</p>
+                {/* <p>Finalizada: {item.cooked}</p> */}
               </div>
 
               <div id="order-info">
@@ -84,6 +87,11 @@ function Cooking() {
                   alt="OK"
                   key={item.id}
                   onClick={() => handleStatus(item.status, item.id)}
+                ></img>
+                <img
+                id="delivery"
+                src={delivery}
+                alt="delivery"
                 ></img>
               </div>
             </section>

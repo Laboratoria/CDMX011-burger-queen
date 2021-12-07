@@ -1,19 +1,22 @@
 import React from "react";
 import "./Styles/Header.css";
 import LogoLet from "../assets/Logo_let.png";
+//import Clock from "./Clock"
+import Clock from 'react-live-clock'
+//import moment from 'moment';
 
 function Header() {
-  let d = new Date();
-  let h = d.getHours();
-  let m = d.getMinutes();
-  let s = d.getSeconds();
-  let time = `${d} ${h}:${m}:${s}`;
-  let shortTime = time.slice(4, 25);
+  const fecha = new Date().toString().slice(4,16)
+  //console.log(fecha)
 
   return (
     <section id="header">
       <img src={LogoLet} alt="Burger-Queen-Logo" id="logo2" />
-      <p id="time">{shortTime} </p>
+      <h1 id="time">
+        {fecha}
+         <Clock format={"HH:mm:ss"} ticking={true} timezone={'US/Central'}/>
+         
+      </h1>
     </section>
   );
 }
