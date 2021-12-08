@@ -3,6 +3,7 @@ import {
   query,
   onSnapshot,
   orderBy,
+  where,  
 } from "firebase/firestore";
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
@@ -13,7 +14,7 @@ import db from "../firebase";
 function Delivered() {
   const [comanda, setComanda] = useState([]);
   const getOrders = query(
-    collection(db, "order"),
+    collection(db, "order"), where("status", "==", "Entregada"),
     orderBy("createdTime", "asc")
   );
 
