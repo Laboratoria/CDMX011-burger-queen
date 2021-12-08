@@ -92,3 +92,9 @@ table {
   color: #6f1a70;
   margin-left: 90px;
 }
+
+#delivered-status {
+  font-size: 25px;
+  color: #6f1a70;
+  margin-left: 170px;
+}

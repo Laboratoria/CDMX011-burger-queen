@@ -17,7 +17,11 @@ function Nav() {
           Recepción
         </button>
       </Link>
-      {/* <button className="section btn-nav" id="btn-entreg">Entregas</button> */}
+      <Link to="/delivered">
+        <button className="section btn-nav" id="btn-recep">
+          Entregas
+        </button>
+      </Link>
     </nav>
   );
 }

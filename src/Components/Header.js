@@ -9,10 +9,10 @@ function Header() {
   return (
     <section id="header">
       <img src={LogoLet} alt="Burger-Queen-Logo" id="logo2" />
-      {/* <h1 id="time">
+      <h1 id="time">
         {fecha}
         <Clock format={"HH:mm:ss"} ticking={true} timezone={"US/Central"} />
-      </h1> */}
+      </h1>
     </section>
   );
 }
