@@ -1,0 +1,157 @@
+/* Div contenedor de #menu, #order y los botones de categoría */
+#menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding-top: 120px;
+  padding-left: 390px;
+  height: max-content;
+  width: 550px;
+}
+/* Div que contiene los botones de opciones y a #order (los dos menús)*/
+#menu {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  width: 600px;
+  height: 300px;
+}
+
+/* Div con el input y label del cliente y mesa */
+#order {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 182px;
+  height: 25px;
+  left: 499px;
+  top: 258px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding-left: 10px;
+}
+
+label {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+}
+
+#input-table {
+  width: 35px;
+}
+
+/* ----- COMANDA -----  */
+/* Para BF */
+/* #comanda-container{
+    width:600px;
+    height: 600px;
+    margin-left: 1225px;
+    margin-top: -550px;
+} */
+
+/* Div contenedor de la comanda */
+#resumen {
+  background-color: #f3db85;
+  border-radius: 10px;
+  width: 600px;
+  height: auto;
+  align-self: center;
+  margin-top: 35px;
+  margin-bottom: 25px;
+  padding-bottom: 1px;
+  /* overflow: scroll; */
+}
+
+#resumen-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+#items,
+#total-price {
+  padding-left: 25px;
+  font-size: 20px;
+}
+
+#total-price {
+  font-style: oblique;
+  font-size: 25px;
+}
+
+hr {
+  background-color: black;
+}
+
+#btn-options,
+#btn-send {
+  display: flex;
+  justify-content: space-around;
+  border: none;
+}
+
+table {
+  margin-left: 60px;
+}
+
+#dish {
+  width: 250px;
+}
+
+.priceTrash {
+  width: 100px;
+}
+
+.qty-item {
+  border-radius: 10px;
+  background-color: rgb(119, 51, 119);
+  color: white;
+  font-size: 20px;
+  height: 30px;
+  width: 30px;
+  border: none;
+}
+
+#total_price {
+  text-align: right;
+  margin-right: 100px;
+  margin-bottom: 10px;
+}
+
+.btn-op {
+  width: 170px;
+  height: 60px;
+  background: #a939ab;
+  color: #ffff;
+  /* box-shadow: 0px 4px 4px rgba(235, 150, 53, 0.932); */
+  border-radius: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.btn-op:hover {
+  color: rgb(235, 206, 113);
+}
+
+.confirm {
+  background: #8baf3f;
+  border: none;
+}
+
+.cancel {
+  background: #d2453c;
+  border: none;
+}
