@@ -1,9 +1,11 @@
-import React from "react";
-import "./Styles/Nav.css";
-import LogoFig from "../assets/Logo_fig.png";
-import { Link } from "react-router-dom";
+/* eslint-disable func-names */
+/* eslint-disable react/button-has-type */
+import React from 'react';
+import './Styles/Nav.css';
+import { Link } from 'react-router-dom';
+import LogoFig from '../assets/Logo_fig.png';
 
-function Nav() {
+const Nav = function () {
   return (
     <nav>
       <img src={LogoFig} alt="Burger-Queen-Logo" id="logo1" />
@@ -24,6 +26,6 @@ function Nav() {
       </Link>
     </nav>
   );
-}
+};
 
 export default Nav;

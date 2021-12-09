@@ -1,27 +1,30 @@
-import React from "react";
-import Header from "./Header";
-import Nav from "./Nav";
-import ShowMenu from "./ShowMenu";
-import { createOrder } from "../firebase.js";
+/* eslint-disable func-names */
+/* eslint-disable react/no-invalid-html-attribute */
+/* eslint-disable react/react-in-jsx-scope */
+import Header from './Header';
+import Nav from './Nav';
+import ShowMenu from './ShowMenu';
+import { createOrder } from '../firebase.js';
 
-function Orders() {
+const Orders = function () {
   const addClient = (clientData) => {
     const d = new Date();
-    let h = d.getHours();
-    let m = d.getMinutes();
-    let s = d.getSeconds();
-    let time = d + h + ":" + m + ":" + s;
+    const h = d.getHours();
+    const m = d.getMinutes();
+    const s = d.getSeconds();
+    const time = `${d + h}:${m}:${s}`;
 
     createOrder(`order/${time}`, clientData);
-    console.log("nueva orden agregada");
+    // eslint-disable-next-line no-console
+    console.log('nueva orden agregada');
   };
 
   return (
     <section
       style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "spaceAround",
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'spaceAround',
       }}
     >
       <Header />
@@ -29,6 +32,6 @@ function Orders() {
       <ShowMenu addOrder={addClient} />
     </section>
   );
-}
+};
 
 export default Orders;

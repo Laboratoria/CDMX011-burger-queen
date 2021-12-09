@@ -14,7 +14,7 @@
 /*Contenedor de cada orden en Reception*/
 #postit {
   /* background-image: url("../../assets/purple-postit.png");
-    /* background: #ffc4009c; 
+    background: #ffc4009c; 
     background-size: 90% 90%;
     background-clip: border-box;
     background-repeat: no-repeat; */
@@ -34,13 +34,10 @@
 
 .card-comanda {
   overflow: scroll;
-  /* height: 300px;   
-    margin-top: 30px; */
 }
 
 h1,
 h2 {
-  /* border-top: #68530d9c;   */
   margin-left: 10px;
   margin-bottom: 1px;
 }
@@ -76,7 +73,6 @@ table {
   display: flex;
   justify-content: space-around;
   padding-bottom: 15px;
-  /* margin-bottom: 10px; */
   font-size: 22px;
   color: #6f1a70;
 }

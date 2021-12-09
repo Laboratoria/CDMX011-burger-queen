@@ -1,10 +1,11 @@
-import React from "react";
-import hamburger from "../assets/hamburger.gif";
-import "./Styles/Nav.css";
-import Header from "./Header";
-import Nav from "./Nav";
+/* eslint-disable func-names */
+import React from 'react';
+import hamburger from '../assets/hamburger.gif';
+import './Styles/Nav.css';
+import Header from './Header';
+import Nav from './Nav';
 
-const Welcome = () => {
+const Welcome = function () {
   return (
     <section>
       <Header />

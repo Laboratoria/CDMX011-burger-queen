@@ -1,9 +1,14 @@
-import React from "react";
-import "./Styles/ShowMenu.css";
-import TotalItems from "./TotalItems";
-import Submit from "./Submit";
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable func-names */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/button-has-type */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import React from 'react';
+import './Styles/ShowMenu.css';
+import TotalItems from './TotalItems';
+import Submit from './Submit';
 
-const Comanda = ({
+const Comanda = function ({
   order,
   client,
   table,
@@ -12,21 +17,23 @@ const Comanda = ({
   onRemove,
   onAdd,
   reset,
-}) => {
-  //condicionar para que aparezca el 0 si aún no se han escogido elementos
-  const totalOrder =
-    order.length !== 0
-      ? order.map((product) => {
-        return product.price;
-      })
-      : [];
+}) {
+  const totalOrder = order.length !== 0
+    ? order.map((product) => product.price)
+    : [];
 
   return (
     <div>
       <div id="resumen">
         <div id="resumen-header">
-          <label className="resume-values">Cliente: {client} </label>
-          <label className="resume-values">Mesa: {table} </label>
+          <label className="resume-values">
+            Cliente:
+            {client}
+          </label>
+          <label className="resume-values">
+            Mesa:
+            {table}
+          </label>
           <label className="resume-values">{category}</label>
         </div>
         <hr />
@@ -36,7 +43,10 @@ const Comanda = ({
               <tr>
                 <td id="dish">{item.name}</td>
                 <td className="priceTrash">
-                  {item.qty} x ${item.price}
+                  {item.qty}
+                  {' '}
+                  x $
+                  {item.price}
                 </td>
                 <td>
                   <button
@@ -58,7 +68,6 @@ const Comanda = ({
                     -
                   </button>
                 </td>
-                {/* <td className='priceTrash'><i className="fas fa-trash-alt"></i></td>  */}
               </tr>
             </tbody>
           </table>

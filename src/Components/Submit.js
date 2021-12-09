@@ -1,41 +1,45 @@
-import React, { useState } from "react";
-import { serverTimestamp } from "firebase/firestore";
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-alert */
+/* eslint-disable func-names */
+/* eslint-disable react/prop-types */
+import React, { useState } from 'react';
+import { serverTimestamp } from 'firebase/firestore';
 
-const Submit = ({ order, client, table, category, addOrder, reset }) => {
+const Submit = function ({
+  order, client, table, category, addOrder, reset,
+}) {
   const initialValues = {
-    client: "",
-    table: "",
-    category: "",
+    client: '',
+    table: '',
+    category: '',
     order: [],
   };
 
-  let [status] = useState("En proceso");
+  const [status] = useState('En proceso');
 
   let [values] = useState(initialValues);
 
   values = {
-    client: client,
-    table: table,
-    category: category,
-    order: order,
+    client,
+    table,
+    category,
+    order,
     createdTime: serverTimestamp(),
-    status: status,
+    status,
   };
 
   const resetPage = (e) => {
-    alert("¿Estás seguro?");
+    alert('¿Estás seguro?');
     reset(e);
   };
 
   const resetComanda = (e) => {
-    //console.log(e)
     handleSubmit(e);
     reset(e);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //console.log('holi', e)
     addOrder(values);
   };
 

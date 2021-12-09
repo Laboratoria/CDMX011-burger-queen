@@ -10,7 +10,6 @@
   padding-left: 45px;
 }
 #logo2 {
-  /* position: absolute; */
   height: 100%;
   left: 45px;
   top: 3px;
@@ -22,18 +21,4 @@
   font-size: 25px;
   color: #6f1a70;
 }
-/* .btn-nav {
-    width: 200px;
-    height: 70px;
-    left: 0px;    
-    font-size: 20px;
-    line-height: 48px;  
-    color: #6f1a70;
-   align-self: center;
-    border-style: none;
-    background: none;
-    transition: all .1s ease;
-}
-.btn-nav:active {
-    background: #F3DB85;
-} */
+

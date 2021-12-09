@@ -1,22 +1,27 @@
-import React, { useState } from "react";
-import Data from "../Data/menu.json";
-import "./Styles/Cards.css";
-import Comanda from "./Comanda";
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/button-has-type */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable react/prop-types */
+/* eslint-disable func-names */
+import React, { useState } from 'react';
+import Data from '../Data/menu.json';
+import './Styles/Cards.css';
+import Comanda from './Comanda';
 
-function MenuMeals({ category, addOrder }) {
+const MenuMeals = function ({ category, addOrder }) {
   const meals = Data.items.filter(
-    (item) => item.category === "Comida" || item.category === "extra"
+    (item) => item.category === 'Comida' || item.category === 'extra',
   );
 
-  //Declaración del estado inicial, el valor y lo que hará que el valor cambie
+  // Declaración del estado inicial, el valor y lo que hará que el valor cambie
   const [order, setOrder] = useState([]);
-  const [client, setClient] = useState("");
-  const [table, setTable] = useState("");
+  const [client, setClient] = useState('');
+  const [table, setTable] = useState('');
 
   const resetElem = (e) => {
     setOrder([]);
-    setClient("");
-    setTable("");
+    setClient('');
+    setTable('');
   };
 
   const handleName = (e) => {
@@ -33,9 +38,7 @@ function MenuMeals({ category, addOrder }) {
     const exist = order.find((x) => x.id === item.id);
     if (exist) {
       setOrder(
-        order.map((x) =>
-          x.id === item.id ? { ...exist, qty: exist.qty + 1 } : x
-        )
+        order.map((x) => (x.id === item.id ? { ...exist, qty: exist.qty + 1 } : x)),
       );
     } else {
       setOrder([...order, { ...item, qty: 1 }]);
@@ -48,9 +51,7 @@ function MenuMeals({ category, addOrder }) {
       setOrder(order.filter((x) => x.id !== item.id));
     } else {
       setOrder(
-        order.map((x) =>
-          x.id === item.id ? { ...exist, qty: exist.qty - 1 } : x
-        )
+        order.map((x) => (x.id === item.id ? { ...exist, qty: exist.qty - 1 } : x)),
       );
     }
   };
@@ -74,7 +75,7 @@ function MenuMeals({ category, addOrder }) {
           name="table"
           value={table}
           onChange={handleTable}
-        ></input>
+        />
       </div>
       <section className="op-container">
         {meals.map((product) => (
@@ -90,7 +91,12 @@ function MenuMeals({ category, addOrder }) {
               onAdd(product);
             }}
           >
-            {product.name} <br /> ${product.price}
+            {product.name}
+            {' '}
+            <br />
+            {' '}
+            $
+            {product.price}
           </button>
         ))}
         <Comanda
@@ -106,6 +112,6 @@ function MenuMeals({ category, addOrder }) {
       </section>
     </div>
   );
-}
+};
 
 export default MenuMeals;

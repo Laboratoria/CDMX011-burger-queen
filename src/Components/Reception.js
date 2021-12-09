@@ -64,7 +64,7 @@ function Cooking() {
       await updateDoc(orderRef, {
         status: "Entregada",
       });
-      alert("Tu orden ha sido entregada");
+      console.log("Tu orden ha sido entregada");
     }
   };
 

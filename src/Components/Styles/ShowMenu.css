@@ -49,13 +49,6 @@ label {
 }
 
 /* ----- COMANDA -----  */
-/* Para BF */
-/* #comanda-container{
-    width:600px;
-    height: 600px;
-    margin-left: 1225px;
-    margin-top: -550px;
-} */
 
 /* Div contenedor de la comanda */
 #resumen {
@@ -133,7 +126,6 @@ table {
   height: 60px;
   background: #a939ab;
   color: #ffff;
-  /* box-shadow: 0px 4px 4px rgba(235, 150, 53, 0.932); */
   border-radius: 20px;
   font-style: normal;
   font-weight: normal;
