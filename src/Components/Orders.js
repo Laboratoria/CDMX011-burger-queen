@@ -4,6 +4,7 @@
 import Header from './Header';
 import Nav from './Nav';
 import ShowMenu from './ShowMenu';
+
 import { createOrder } from '../firebase.js';
 
 const Orders = function () {
@@ -15,8 +16,6 @@ const Orders = function () {
     const time = `${d + h}:${m}:${s}`;
 
     createOrder(`order/${time}`, clientData);
-    // eslint-disable-next-line no-console
-    console.log('nueva orden agregada');
   };
 
   return (

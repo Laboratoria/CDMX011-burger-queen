@@ -1,9 +1,10 @@
 /* eslint-disable func-names */
 /* eslint-disable react/button-has-type */
 import React from 'react';
-import './Styles/Nav.css';
 import { Link } from 'react-router-dom';
 import LogoFig from '../assets/Logo_fig.png';
+
+import './Styles/Nav.css';
 
 const Nav = function () {
   return (

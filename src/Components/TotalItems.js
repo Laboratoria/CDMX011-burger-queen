@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable func-names */
 import React, { useState, useEffect } from 'react';
+
 import './Styles/ShowMenu.css';
 
 const TotalItems = function ({ price, order }) {

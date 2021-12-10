@@ -1,8 +1,9 @@
 /* eslint-disable func-names */
 import React from 'react';
-import './Styles/Header.css';
 import Clock from 'react-live-clock';
 import LogoLet from '../assets/Logo_let.png';
+
+import './Styles/Header.css';
 
 const Header = function () {
   const fecha = new Date().toString().slice(4, 16);

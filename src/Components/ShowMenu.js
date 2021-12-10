@@ -3,10 +3,10 @@
 import React, { useState } from 'react';
 import MenuBf from './MenuBf';
 import MenuMeals from './MenuMeal';
+
 import './Styles/ShowMenu.css';
 
 const ShowMenu = function ({ addOrder }) {
-  // Se declara lo que quiero que cambie (categoría)
   const [typeOfFood, setTypeOfFood] = useState('Desayuno');
 
   const selectCategory = (e) => {

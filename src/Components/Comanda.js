@@ -4,9 +4,10 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-import './Styles/ShowMenu.css';
 import TotalItems from './TotalItems';
 import Submit from './Submit';
+
+import './Styles/ShowMenu.css';
 
 const Comanda = function ({
   order,

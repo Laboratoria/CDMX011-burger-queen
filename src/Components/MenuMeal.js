@@ -5,15 +5,15 @@
 /* eslint-disable func-names */
 import React, { useState } from 'react';
 import Data from '../Data/menu.json';
-import './Styles/Cards.css';
 import Comanda from './Comanda';
+
+import './Styles/Cards.css';
 
 const MenuMeals = function ({ category, addOrder }) {
   const meals = Data.items.filter(
     (item) => item.category === 'Comida' || item.category === 'extra',
   );
 
-  // Declaración del estado inicial, el valor y lo que hará que el valor cambie
   const [order, setOrder] = useState([]);
   const [client, setClient] = useState('');
   const [table, setTable] = useState('');

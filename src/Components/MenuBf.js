@@ -6,8 +6,9 @@
 /* eslint-disable no-console */
 import React, { useState } from 'react';
 import Data from '../Data/menu.json';
-import './Styles/Cards.css';
 import Comanda from './Comanda';
+
+import './Styles/Cards.css';
 
 const MenuBf = function ({ category, addOrder }) {
   const breakfast = Data.items.filter((item) => item.category === 'Desayuno');
@@ -89,7 +90,6 @@ const MenuBf = function ({ category, addOrder }) {
                 { name: product.name, price: product.price, id: product.id },
               ]);
               onAdd(product);
-              console.log(order);
             }}
           >
             {product.name}

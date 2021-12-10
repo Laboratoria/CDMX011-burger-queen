@@ -1,9 +1,10 @@
 /* eslint-disable func-names */
 import React from 'react';
-import hamburger from '../assets/hamburger.gif';
-import './Styles/Nav.css';
 import Header from './Header';
 import Nav from './Nav';
+import hamburger from '../assets/hamburger.gif';
+
+import './Styles/Nav.css';
 
 const Welcome = function () {
   return (

@@ -11,8 +11,9 @@ import {
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Nav from './Nav';
+
+import db from '../Firebase/firebase';
 import './Styles/Reception.css';
-import db from '../firebase';
 
 const Delivered = function () {
   const [comanda, setComanda] = useState([]);
