@@ -12,7 +12,7 @@ import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import Nav from './Nav';
 
-import db from '../Firebase/firebase';
+import db from '../firebase';
 import './Styles/Reception.css';
 
 const Delivered = function () {

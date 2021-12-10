@@ -18,7 +18,7 @@ import Nav from './Nav';
 import check from '../assets/check.png';
 import delivery from '../assets/delivery.png';
 
-import db from '../Firebase/firebase';
+import db from '../firebase';
 import './Styles/Reception.css';
 
 const Cooking = function () {
